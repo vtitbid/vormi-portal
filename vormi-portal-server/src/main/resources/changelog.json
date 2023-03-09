@@ -1,0 +1,87 @@
+{
+  "databaseChangeLog": [
+    {
+      "changeSet": {
+        "id": "0",
+        "author": "d1snin (me@d1s.dev)",
+        "changes": [
+          {
+            "createTable": {
+              "tableName": "volunteer_task",
+              "columns": [
+                {
+                  "column": {
+                    "name": "id",
+                    "type": "uuid",
+                    "constraints": {
+                      "nullable": false,
+                      "notNullConstraintName": "volunteer_task_not_null_id",
+                      "primaryKey": true,
+                      "primaryKeyName": "volunteer_task_primary_key"
+                    }
+                  }
+                },
+                {
+                  "column": {
+                    "name": "created_at",
+                    "type": "timestamp",
+                    "constraints": {
+                      "nullable": false,
+                      "notNullConstraintName": "volunteer_task_not_null_created_at"
+                    }
+                  }
+                },
+                {
+                  "column": {
+                    "name": "updated_at",
+                    "type": "timestamp",
+                    "constraints": {
+                      "nullable": false,
+                      "notNullConstraintName": "volunteer_task_not_null_updated_at"
+                    }
+                  }
+                },
+                {
+                  "column": {
+                    "name": "title",
+                    "type": "text",
+                    "constraints": {
+                      "nullable": false,
+                      "notNullConstraintName": "volunteer_task_not_null_title"
+                    }
+                  }
+                },
+                {
+                  "column": {
+                    "name": "description",
+                    "type": "text",
+                    "constraints": {
+                      "nullable": false,
+                      "notNullConstraintName": "volunteer_task_not_null_description"
+                    }
+                  }
+                },
+                {
+                  "column": {
+                    "name": "status",
+                    "type": "text",
+                    "constraints": {
+                      "nullable": false,
+                      "notNullConstraintName": "volunteer_task_not_null_status"
+                    }
+                  }
+                },
+                {
+                  "column": {
+                    "name": "banner_image_id",
+                    "type": "text"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

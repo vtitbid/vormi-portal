@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  vormi-portal-telegram-admin:
+    image: vormi-portal-telegram-admin:latest
+    container_name: vormi-portal-telegram-admin
+    build:
+      context: "../"
+      dockerfile: "./docker/Dockerfile"
+    env_file: "../.env"
+    networks:
+      - vormi-portal-telegram-admin-net
+    restart: always
+
+  vormi-portal-telegram-admin-redis:
+    image: redis:latest
+    container_name: vormi-portal-telegram-admin-redis
+    expose:
+      - "6379"
+    volumes:
+      - vormi-portal-telegram-admin-redis-data:/data
+    networks:
+      - vormi-portal-telegram-admin-net
+    restart: always
+
+volumes:
+  vormi-portal-telegram-admin-redis-data:
+    driver: local
+
+networks:
+  vormi-portal-telegram-admin-net:
+    driver: bridge

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+./gradlew vormi-portal-telegram-admin:installDist
+docker-compose -f ./vormi-portal-telegram-admin/docker/docker-compose.yml down
+docker volume rm docker_vormi-portal-telegram-admin-redis-data
+docker-compose -f ./vormi-portal-telegram-admin/docker/docker-compose.yml up --build

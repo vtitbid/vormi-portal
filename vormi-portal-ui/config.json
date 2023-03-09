@@ -1,0 +1,9 @@
+{
+  "backend": {
+    "baseUrl": "http://localhost:9682"
+  },
+
+  "social": {
+    "eMail": "vormi@vtitbid.tech"
+  }
+}

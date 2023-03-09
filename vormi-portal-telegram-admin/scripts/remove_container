@@ -1,0 +1,4 @@
+#!/bin/bash
+
+docker-compose -f ./vormi-portal-telegram-admin/docker/docker-compose.yml down
+docker volume rm docker_vormi-portal-telegram-admin-redis-data
