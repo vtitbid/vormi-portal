@@ -22,6 +22,7 @@ import dispatch.core.withIO
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 import org.ktorm.database.Database
+import org.ktorm.dsl.desc
 import org.ktorm.dsl.eq
 import org.ktorm.entity.add
 import org.ktorm.entity.find
@@ -48,7 +49,7 @@ class DefaultVolunteerTaskRepository : VolunteerTaskRepository, KoinComponent {
     override suspend fun findAllVolunteerTasks(limit: Int, offset: Int) =
         withIO {
             runCatching {
-                database.volunteerTasks.export(limit, offset)
+                database.volunteerTasks.export(limit, offset, sort = { it.createdAt.desc() })
             }
         }
 
